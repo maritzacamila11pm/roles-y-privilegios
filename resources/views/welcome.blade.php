@@ -1,57 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Bienvenido</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8fafc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .links {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .links a {
-            display: inline-block;
-            margin: 10px 20px;
-            padding: 10px 20px;
-            background-color: #2563eb;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        .links a:hover {
-            background-color: #1d4ed8;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
-<body>
+<body class="bg-light d-flex justify-content-center align-items-center vh-100">
 
-    <div class="links">
-        <h1>Bienvenido</h1>
-        <h1>Sistema de roles y Privilegios</h1>
+    <div class="bg-white p-5 rounded shadow text-center" style="max-width: 400px;">
+        <h1 class="mb-3">Bienvenido</h1>
+        <h2 class="mb-4">Sistema de roles y Privilegios</h2>
+
         @if (Route::has('login'))
             @auth
-                <a href="{{ url('/dashboard') }}">Dashboard</a>
+                <a href="{{ url('/dashboard') }}" class="btn btn-primary mx-2 mb-2">Dashboard</a>
             @else
-                <a href="{{ route('login') }}">Login</a>
+                <a href="{{ route('login') }}" class="btn btn-primary mx-2 mb-2">Login</a>
                 @if (Route::has('register'))
-                    <a href="{{ route('register') }}">Register</a>
+                    <a href="{{ route('register') }}" class="btn btn-secondary mx-2 mb-2">Register</a>
                 @endif
             @endauth
         @endif
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
