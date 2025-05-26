@@ -2,88 +2,61 @@
 
 @section('content')
 <main class="main" id="top">
-  <div class="container-fluid">
-    <div class="row min-vh-100 flex-center g-0">
-      <div class="col-lg-8 col-xxl-5 py-3 position-relative">
-        <img class="bg-auth-circle-shape" src="assets/img/icons/spot-illustrations/bg-shape.png" alt="" width="250">
-        <img class="bg-auth-circle-shape-2" src="assets/img/icons/spot-illustrations/shape-1.png" alt="" width="150">
-        <div class="card overflow-hidden z-1">
-          <div class="card-body p-0">
-            <div class="row g-0 h-100">
-              <div class="col-md-5 text-center bg-card-gradient">
-                <div class="position-relative p-4 pt-md-5 pb-md-7">
-                  <div class="bg-holder bg-auth-card-shape" style="background-image:url(assets/img/icons/spot-illustrations/half-circle.png);"></div>
-                  <div class="z-1 position-relative">
-                    <a class="link-light mb-4 font-sans-serif fs-4 d-inline-block fw-bolder" href="#">falcon</a>
-                    <p class="opacity-75 text-white">Focus on functionality, we’ll handle the UI.</p>
-                  </div>
-                </div>
-                <div class="mt-3 mb-4 mt-md-4 mb-md-5">
-                  <p class="pt-3 text-white">Already have an account?<br>
-                    <a class="btn btn-outline-light mt-2 px-4" href="{{ route('login') }}">Log In</a>
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-7 d-flex flex-center">
-                <div class="p-4 p-md-5 flex-grow-1">
-                  <h3>{{ __('Register') }}</h3>
-                  <form method="POST" action="{{ route('register') }}">
-                    @csrf
-                    <div class="mb-3">
-                      <label class="form-label" for="name">Name</label>
-                      <input class="form-control @error('name') is-invalid @enderror" id="name" name="name" type="text" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                      @error('name')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                      @enderror
-                    </div>
+  <div class="container-fluid min-vh-100 d-flex justify-content-center align-items-center bg-light">
+    <div class="card shadow-lg border-0 rounded-4 overflow-hidden" style="max-width: 900px;">
+      <div class="row g-0">
 
-                    <div class="mb-3">
-                      <label class="form-label" for="email">Email address</label>
-                      <input class="form-control @error('email') is-invalid @enderror" id="email" name="email" type="email" value="{{ old('email') }}" required autocomplete="email">
-                      @error('email')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                      @enderror
-                    </div>
+        <!-- Lado izquierdo con imagen -->
+        <div class="col-md-5 bg-primary d-flex flex-column justify-content-center align-items-center text-white p-4">
+          <h2 class="fw-bold mb-3">¡Bienvenida!</h2>
+          <p class="text-center">Crea una cuenta para acceder a todas las funciones del sistema.</p>
+          <img src="https://cdn-icons-png.flaticon.com/512/295/295128.png" class="img-fluid mt-3" alt="Registro" width="150">
+        </div>
 
-                    <div class="row gx-2">
-                      <div class="mb-3 col-sm-6">
-                        <label class="form-label" for="password">Password</label>
-                        <input class="form-control @error('password') is-invalid @enderror" id="password" name="password" type="password" required autocomplete="new-password">
-                        @error('password')
-                          <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                      </div>
-                      <div class="mb-3 col-sm-6">
-                        <label class="form-label" for="password-confirm">Confirm Password</label>
-                        <input class="form-control" id="password-confirm" name="password_confirmation" type="password" required autocomplete="new-password">
-                      </div>
-                    </div>
+        <!-- Lado derecho con formulario -->
+        <div class="col-md-7 bg-white p-5">
+          <h3 class="mb-4 text-center text-primary fw-bold">Crear cuenta</h3>
+          <form method="POST" action="{{ route('register') }}">
+            @csrf
 
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="terms" required>
-                      <label class="form-label" for="terms">I accept the <a href="#">terms</a> and <a href="#">privacy policy</a></label>
-                    </div>
+            <div class="mb-3">
+              <label class="form-label">Nombre completo</label>
+              <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" required autofocus>
+              @error('name')
+                <div class="invalid-feedback">{{ $message }}</div>
+              @enderror
+            </div>
 
-                    <div class="mb-3">
-                      <button class="btn btn-primary d-block w-100 mt-3" type="submit">{{ __('Register') }}</button>
-                    </div>
-                  </form>
+            <div class="mb-3">
+              <label class="form-label">Correo electrónico</label>
+              <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" required>
+              @error('email')
+                <div class="invalid-feedback">{{ $message }}</div>
+              @enderror
+            </div>
 
-                  <div class="position-relative mt-4">
-                    <hr>
-                    <div class="divider-content-center">or register with</div>
-                  </div>
-                  <div class="row g-2 mt-2">
-                    <div class="col-sm-6"><a class="btn btn-outline-google-plus btn-sm d-block w-100" href="#"><span class="fab fa-google-plus-g me-2"></span> Google</a></div>
-                    <div class="col-sm-6"><a class="btn btn-outline-facebook btn-sm d-block w-100" href="#"><span class="fab fa-facebook-square me-2"></span> Facebook</a></div>
-                  </div>
-                </div> <!-- /.p-4 -->
-              </div> <!-- /.col-md-7 -->
-            </div> <!-- /.row -->
-          </div> <!-- /.card-body -->
-        </div> <!-- /.card -->
-      </div> <!-- /.col -->
-    </div> <!-- /.row -->
-  </div> <!-- /.container-fluid -->
+            <div class="mb-3">
+              <label class="form-label">Contraseña</label>
+              <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" required>
+              @error('password')
+                <div class="invalid-feedback">{{ $message }}</div>
+              @enderror
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label">Confirmar contraseña</label>
+              <input type="password" name="password_confirmation" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 py-2">Registrarse</button>
+
+            <div class="text-center mt-3">
+              <small>¿Ya tienes una cuenta? <a href="{{ route('login') }}">Inicia sesión</a></small>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 @endsection
