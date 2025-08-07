@@ -9,6 +9,9 @@ use Spatie\Permission\Models\Permission;
 use DB;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
+use Barryvdh\DomPDF\Facade\Pdf;
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class RoleController extends Controller
 {
@@ -144,5 +147,10 @@ class RoleController extends Controller
         DB::table("roles")->where('id',$id)->delete();
         return redirect()->route('roles.index')
                         ->with('success','Role deleted successfully');
+    }
+    public function exportPdf()
+    {
+    $pdf = Pdf::loadView('role.pdf', compact('data'));
+    return $pdf->download('roles.pdf');
     }
 }

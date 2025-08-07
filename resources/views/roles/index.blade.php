@@ -60,5 +60,4 @@
 
 {!! $roles->links('pagination::bootstrap-5') !!}
 
-<p class="text-center text-muted mt-4"><small> Creado por Maritza y Yadira  💜</small></p>
 @endsection

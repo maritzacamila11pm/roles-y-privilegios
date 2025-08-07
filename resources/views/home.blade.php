@@ -4,7 +4,7 @@
 <div class="d-flex 90vh bg-light">
   <nav class="d-flex flex-column bg-white p-3" style="width: 180px; font-weight: 600;">
     <a href="{{ route('roles.index') }}" class="btn btn-primary mb-3 rounded">Roles</a>
-    <a href="{{ route('users.index') }}" class="btn btn-success mb-3 rounded">Administradores</a>
+    <a href="{{ route('oficinas.index') }}" class="btn btn-success mb-3 rounded">Oficinas</a>
     <a href="{{ route('users.index') }}" class="btn btn-danger mb-3 rounded">Usuarios</a>
   </nav>
 
