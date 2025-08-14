@@ -6,6 +6,8 @@
     <a href="{{ route('roles.index') }}" class="btn btn-primary mb-3 rounded">Roles</a>
     <a href="{{ route('oficinas.index') }}" class="btn btn-success mb-3 rounded">Oficinas</a>
     <a href="{{ route('users.index') }}" class="btn btn-danger mb-3 rounded">Usuarios</a>
+    <a href="{{ route('users.asistencia') }}" class="btn btn-danger mb-3 rounded">Asistencia</a>
+
   </nav>
 
   <main class="d-flex justify-content-center align-items-center flex-grow-1">
@@ -21,6 +23,9 @@
       </div>
       <div class="col-6">
         <div class="btn btn-danger w-100 py-3 fw-semibold rounded">Usuarios</div>
+      </div>
+      <div class="col-6">
+        <div class="btn btn-success w-100 py-3 fw-semibold rounded">Asistencia</div>
       </div>
     </div>
   </main>

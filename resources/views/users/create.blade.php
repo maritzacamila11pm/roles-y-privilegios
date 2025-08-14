@@ -119,6 +119,7 @@
                 </select>
             </div>
 
+
             <div class="col-md-4">
                 <label class="form-label fw-bold text-secondary">Duración (meses):</label>
                 <input type="number" name="duracion_meses" placeholder="Ej: 3" class="form-control border-primary" value="{{ old('duracion_meses') }}" required min="1" max="12">

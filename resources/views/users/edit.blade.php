@@ -111,7 +111,6 @@
                     <option value="REMUNERADO" {{ old('modalidad', $user->modalidad) == 'REMUNERADO' ? 'selected' : '' }}>REMUNERADO</option>
                 </select>
             </div>
-
             <div class="col-md-4">
                 <label class="form-label fw-bold text-secondary">Duración (meses):</label>
                 <input type="number" name="duracion_meses" class="form-control border-primary"

@@ -142,7 +142,10 @@ class UserController extends Controller
         return redirect()->route('users.index')
                          ->with('success', 'Usuario eliminado exitosamente');
     }
-
+    public function Asistencia(): View
+    {
+        return view('users.asistencia');
+    }
     /**
      * Exportar PDF individual del usuario
      */
@@ -152,6 +155,7 @@ class UserController extends Controller
         $pdf = Pdf::loadView('users.pdf', compact('usuario')); // ← aquí era el error
         return $pdf->stream('usuario_' . $usuario->dni . '.pdf');
     }
+
 
     /**
      * Exportar Excel de todos los usuarios
@@ -194,4 +198,5 @@ class UserController extends Controller
         fclose($salida);
         exit;
     }
+
 }

@@ -19,13 +19,18 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
+
     Route::get('/users/{id}/export-pdf', [UserController::class, 'exportPdf'])->name('users.exportPdf');
+    Route::get('/users/asistencia', [UserController::class, 'asistencia'])->name('users.asistencia');
+
+    //Route::get('/users/asistencia', [UserController::class, 'asistencia'])->name('users.asistencia');
     Route::get('roles/export/pdf', [UserController::class, 'exportPdf2'])->name('roles.export.pdf');
     Route::get('/usuarios/excel', [UserController::class, 'exportExcel'])->name('usuarios.excel');
+
     // Rutas de oficinas
     Route::resource('oficinas', OficinaController::class);
     Route::get('/oficinas/pdf', [OficinaController::class, 'exportPdf'])->name('oficinas.exportPdf');
 
-    // Oroles
+    //roles
     Route::get('roles/export/pdf', [UserController::class, 'exportPdf2'])->name('roles.export.pdf');
 });

@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 40px;
+    line-height: 1.5;
+}
+
+.carta {
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    background-color: #fdfdfd;
+}
+
+header h1 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.fecha {
+    font-size: 14px;
+    color: #666;
+    text-align: right;
+}
+
+main p {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.firma {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cargo {
+    font-size: 14px;
+    color: #555;
+}
